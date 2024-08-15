@@ -1,0 +1,37 @@
+### GET ALL USER
+GET http://localhost:8000/api/v1/user
+
+### POST REGISTER
+POST http://localhost:8000/api/v1/user
+Content-Type: application/json
+
+{
+   "name": "Unique Identifiear",
+   "email": "Uniqu@devscale.id",
+   "password": "12345"
+}
+
+### UPDATE USER
+PATCH http://localhost:8000/api/v1/user/66bd6898ffddf699a9facf74
+Content-Type: application/json
+
+{
+    "name": "Udil Irsyad",
+    "email": "fadhilirsyad31@devscale.id",
+    "password": "12334"
+}
+
+### DELETE USER
+DELETE http://localhost:8000/api/v1/user/66bc52c8013e83de2c4eb174
+
+### POST LOGIN
+POST  http://localhost:8000/api/v1/user/login
+Content-Type: application/json
+
+{
+    "email": "fadhilirsyad31@devscale.id",
+    "password": "12334"
+}
+
+### LOGOUT USER
+POST http://localhost:8000/api/v1/user/logout

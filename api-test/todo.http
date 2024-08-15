@@ -1,0 +1,26 @@
+### GET ALL TODO
+GET http://localhost:8000/api/v1/todo
+
+
+### CREATE TODO
+POST http://localhost:8000/api/v1/todo
+Content-Type: application/json
+
+{
+    "userId": "66bd6898ffddf699a9facf74",
+    "title" : "C++",
+    "content": "about c++"
+}
+
+### UPDATE TODO
+PATCH http://localhost:8000/api/v1/todo/66bd86e5a338182e83818ecc
+Content-Type: application/json
+
+{
+    "userId": "66bd6898ffddf699a9facf74",
+    "title": "Python",
+    "content": "about python"
+}
+
+### DELETE TODO
+DELETE http://localhost:8000/api/v1/todo/66bd86e5a338182e83818ecc
