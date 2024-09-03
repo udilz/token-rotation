@@ -1,9 +1,12 @@
 ### GET ALL TODO
-GET http://localhost:8000/api/v1/todo
+GET http://localhost:8000/api/v1/todos
+
+#### GET SINGLE TODO
+GET http://localhost:8000/api/v1/todos/66d65e423973fbcc9707bcc3
 
 
 ### CREATE TODO
-POST http://localhost:8000/api/v1/todo
+POST http://localhost:8000/api/v1/todos
 Content-Type: application/json
 
 {
@@ -13,7 +16,7 @@ Content-Type: application/json
 }
 
 ### UPDATE TODO
-PATCH http://localhost:8000/api/v1/todo/66bd86e5a338182e83818ecc
+PATCH http://localhost:8000/api/v1/todos/66bd86e5a338182e83818ecc
 Content-Type: application/json
 
 {
@@ -23,4 +26,4 @@ Content-Type: application/json
 }
 
 ### DELETE TODO
-DELETE http://localhost:8000/api/v1/todo/66bd86e5a338182e83818ecc
+DELETE http://localhost:8000/api/v1/todos/66bd86e5a338182e83818ecc

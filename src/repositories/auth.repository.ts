@@ -14,6 +14,15 @@ const AuthRepository = {
     }
   },
 
+  getSingleUser: async(id: string) => {
+    try {
+      const getOne = await User.findById(id);
+      return getOne;
+    } catch (error) {
+      console.log(error)
+    }
+  },
+
   getRefTok: async (refreshToken : string) => {
     try {
       const getRefTok = await Auth.findOne({

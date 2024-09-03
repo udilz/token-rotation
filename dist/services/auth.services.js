@@ -23,6 +23,15 @@ const AuthServices = {
             console.log(error);
         }
     }),
+    getSingleUser: (id) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const getOne = yield auth_repository_1.default.getSingleUser(id);
+            return getOne;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }),
     getRefTok: (refreshToken) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const getRefTok = yield auth_repository_1.default.getRefTok(refreshToken);

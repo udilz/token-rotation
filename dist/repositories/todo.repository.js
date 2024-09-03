@@ -9,12 +9,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const todo_models_1 = require("../models/todo.models");
+const todo_schema_1 = require("../models/todo.schema");
 const TodoRepository = {
     getAllTodos: () => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            const allTodo = yield todo_models_1.Todo.find();
+            const allTodo = yield todo_schema_1.Todo.find();
             return allTodo;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }),
+    getSingleTodo: (id) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const getOne = yield todo_schema_1.Todo.findById(id);
+            return getOne;
         }
         catch (error) {
             console.log(error);
@@ -22,7 +31,7 @@ const TodoRepository = {
     }),
     createTodo: (todo) => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            const newTodo = new todo_models_1.Todo(todo);
+            const newTodo = new todo_schema_1.Todo(todo);
             yield newTodo.save();
         }
         catch (error) {
@@ -31,7 +40,7 @@ const TodoRepository = {
     }),
     updateTodo: (id, todo) => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            const todoUpdate = yield todo_models_1.Todo.findByIdAndUpdate(id, todo);
+            const todoUpdate = yield todo_schema_1.Todo.findByIdAndUpdate(id, todo);
             return todoUpdate;
         }
         catch (error) {
@@ -40,12 +49,12 @@ const TodoRepository = {
     }),
     deleteTodo: (id, todo) => __awaiter(void 0, void 0, void 0, function* () {
         try {
-            const todoDelete = yield todo_models_1.Todo.findByIdAndDelete(id, todo);
+            const todoDelete = yield todo_schema_1.Todo.findByIdAndDelete(id, todo);
             return todoDelete;
         }
         catch (error) {
             console.log(error);
         }
-    })
+    }),
 };
 exports.default = TodoRepository;

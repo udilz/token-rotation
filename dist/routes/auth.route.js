@@ -9,6 +9,7 @@ const auth_controller_1 = __importDefault(require("../controllers/auth.controlle
 exports.authRouter = express_1.default.Router();
 // auth router
 exports.authRouter.get("/", auth_controller_1.default.handleAllUsers);
+exports.authRouter.get("/:id", auth_controller_1.default.handleGetSingleUser);
 exports.authRouter.post("/", auth_controller_1.default.handleCreateUser);
 exports.authRouter.patch("/:id", auth_controller_1.default.handleUpdateUser);
 exports.authRouter.delete("/:id", auth_controller_1.default.handleDeleteUser);

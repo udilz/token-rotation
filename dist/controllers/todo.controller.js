@@ -23,6 +23,16 @@ const TodoController = {
             console.log(error);
         }
     }),
+    handleGetSingleTodo: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const todoId = req.params.id;
+            const getSingleTodo = yield todo_services_1.default.getSingleTodo(todoId);
+            return res.status(200).json({ message: "berhasil ambil data todo", data: getSingleTodo });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }),
     handleCreateTodo: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const { userId, title, content } = req.body;
@@ -54,6 +64,6 @@ const TodoController = {
         catch (error) {
             console.log(error);
         }
-    })
+    }),
 };
 exports.default = TodoController;

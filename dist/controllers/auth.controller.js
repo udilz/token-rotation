@@ -23,6 +23,16 @@ const AuthController = {
             console.log(error);
         }
     }),
+    handleGetSingleUser: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const userId = req.params.id;
+            const getSingleUser = yield auth_services_1.default.getSingleUser(userId);
+            return res.status(200).json({ message: "berhasil ambil data user", data: getSingleUser });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }),
     handleCreateUser: (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const { name, email, password } = req.body;
@@ -58,11 +68,7 @@ const AuthController = {
         try {
             const { email, password } = req.body;
             const userLogin = yield auth_services_1.default.loginUser({ email, password });
-            return res
-                .cookie("accessToken", userLogin.accessToken, { httpOnly: true })
-                .cookie("refreshToken", userLogin.refreshToken, { httpOnly: true })
-                .status(200)
-                .json({ message: "Login success!" });
+            return res.cookie("accessToken", userLogin.accessToken, { httpOnly: true }).cookie("refreshToken", userLogin.refreshToken, { httpOnly: true }).status(200).json({ message: "Login success!" });
         }
         catch (error) {
             console.log(error);
@@ -77,6 +83,6 @@ const AuthController = {
         catch (error) {
             console.log(error);
         }
-    })
+    }),
 };
 exports.default = AuthController;

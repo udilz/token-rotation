@@ -23,6 +23,15 @@ const TodoServices = {
             console.log(error);
         }
     }),
+    getSingleTodo: (id) => __awaiter(void 0, void 0, void 0, function* () {
+        try {
+            const getOne = yield todo_repository_1.default.getSingleTodo(id);
+            return getOne;
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }),
     createTodo: (createTodo) => __awaiter(void 0, void 0, void 0, function* () {
         try {
             const { userId, title, content } = createTodo;
@@ -57,6 +66,6 @@ const TodoServices = {
         catch (error) {
             console.log(error);
         }
-    })
+    }),
 };
 exports.default = TodoServices;

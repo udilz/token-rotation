@@ -10,6 +10,15 @@ const AuthServices = {
             console.log(error);
         }
     },
+    
+    getSingleUser: async (id: string) => {
+        try {
+            const getOne = await AuthRepository.getSingleUser(id);
+            return getOne;
+        } catch (error) {
+            console.log(error)
+        }
+    },
 
     getRefTok: async(refreshToken : string) => {
         try {

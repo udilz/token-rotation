@@ -20,8 +20,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.use("/api/v1/todo", todoRouter)
-app.use("/api/v1/user", authRouter);
+app.use("/api/v1/todos", todoRouter)
+app.use("/api/v1/users", authRouter);
 
 app.listen(process.env.PORT, () => {
     console.log(`server running at port ${process.env.PORT}`)

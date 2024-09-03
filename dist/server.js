@@ -17,8 +17,8 @@ mongoose_1.default
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
-app.use("/api/v1/todo", todo_route_1.todoRouter);
-app.use("/api/v1/user", auth_route_1.authRouter);
+app.use("/api/v1/todos", todo_route_1.todoRouter);
+app.use("/api/v1/users", auth_route_1.authRouter);
 app.listen(process.env.PORT, () => {
     console.log(`server running at port ${process.env.PORT}`);
 });

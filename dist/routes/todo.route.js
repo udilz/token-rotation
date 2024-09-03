@@ -11,6 +11,7 @@ exports.todoRouter = express_1.default.Router();
 exports.authRouter = express_1.default.Router();
 exports.todoRouter.use(authorization_1.authorization);
 exports.todoRouter.get("/", todo_controller_1.default.handleGetAllTodos);
+exports.todoRouter.get("/:id", todo_controller_1.default.handleGetSingleTodo);
 exports.todoRouter.post("/", todo_controller_1.default.handleCreateTodo);
 exports.todoRouter.patch("/:id", todo_controller_1.default.handleUpdateTodo);
 exports.todoRouter.delete("/:id", todo_controller_1.default.handleDeleteTodo);

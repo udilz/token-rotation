@@ -1,8 +1,11 @@
 ### GET ALL USER
-GET http://localhost:8000/api/v1/user
+GET http://localhost:8000/api/v1/users
+
+### GET SINGLE USER
+GET http://localhost:8000/api/v1/users/66bebb4c3107743253fa520b
 
 ### POST REGISTER
-POST http://localhost:8000/api/v1/user
+POST http://localhost:8000/api/v1/users
 Content-Type: application/json
 
 {
@@ -12,7 +15,7 @@ Content-Type: application/json
 }
 
 ### UPDATE USER
-PATCH http://localhost:8000/api/v1/user/66bd6898ffddf699a9facf74
+PATCH http://localhost:8000/api/v1/users/66bd6898ffddf699a9facf74
 Content-Type: application/json
 
 {
@@ -22,16 +25,16 @@ Content-Type: application/json
 }
 
 ### DELETE USER
-DELETE http://localhost:8000/api/v1/user/66bc52c8013e83de2c4eb174
+DELETE http://localhost:8000/api/v1/users/66bc52c8013e83de2c4eb174
 
 ### POST LOGIN
-POST  http://localhost:8000/api/v1/user/login
+POST  http://localhost:8000/api/v1/users/login
 Content-Type: application/json
 
 {
-    "email": "fadhilirsyad31@devscale.id",
-    "password": "12334"
+    "email": "Uniqu@devscale.id",
+    "password": "12345"
 }
 
 ### LOGOUT USER
-POST http://localhost:8000/api/v1/user/logout
+POST http://localhost:8000/api/v1/users/logout
